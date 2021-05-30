@@ -1,3 +1,9 @@
+/*
+Uppsala University, PDP course, A1
+Group: 6
+Author:Junjie Chu
+Contributors: Alexander Palfelt/Hannes Kuchelmeister
+*/
 #define PI 3.14159265358979323846
 #include <mpi.h>
 #include <stdio.h>
