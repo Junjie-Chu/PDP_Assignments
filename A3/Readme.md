@@ -1,5 +1,5 @@
 # Readme
-*Update:2021/May/31 Junjie Chu*
+*Update:2021/May/31 Junjie Chu*  
 To complie:  
 ```
 mpicc -std=c99 -g -O3 -o quickrevised quickrevised.c -lm
