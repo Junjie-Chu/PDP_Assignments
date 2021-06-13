@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
             memcpy(finaldata+currentlocation,rcv_buffer,currentsize*sizeof(double));
             currentlocation = currentlocation+currentsize;
             //printf("\n currentlocation:%d \n",currentlocation);
-            double* buffer;
+            //double* buffer;
             //double* temp;
             for( int r = 1; r < size; ++r )
             {
@@ -133,9 +133,10 @@ int main(int argc, char **argv) {
                 MPI_Get_count(&status, MPI_DOUBLE, &bufferSize);
                 //MPI_Recv( &bufferSize, 1, MPI_INT, r, r, MPI_COMM_WORLD, NULL );
                 //printf("\nbuffersize:%d\n",bufferSize);
-                buffer = (double*)malloc(bufferSize*sizeof(double));
-                MPI_Recv(buffer, bufferSize, MPI_DOUBLE, r, r, MPI_COMM_WORLD, NULL );
-                memcpy(finaldata+currentlocation,buffer,bufferSize*sizeof(double));
+                //buffer = (double*)malloc(bufferSize*sizeof(double));
+                //MPI_Recv(buffer, bufferSize, MPI_DOUBLE, r, r, MPI_COMM_WORLD, NULL );
+                MPI_Recv(finaldata+currentlocation, bufferSize, MPI_DOUBLE, r, r, MPI_COMM_WORLD, NULL );
+                //memcpy(finaldata+currentlocation,buffer,bufferSize*sizeof(double));
                 currentlocation = currentlocation+bufferSize;
                 /*
     		    printf("\n");
@@ -144,7 +145,7 @@ int main(int argc, char **argv) {
    		        }
     		    printf("\n");
     		*/   
-                free(buffer);
+                //free(buffer);
             }
         }
         MPI_Barrier(MPI_COMM_WORLD);
