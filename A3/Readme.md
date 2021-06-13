@@ -15,6 +15,12 @@ To complie:
 ```
 mpicc -std=c99 -g -O3 -o quicksort_revised_0 quicksort_revised_0.c -lm
 ```
+## Results:
+### 2021/6/01 Junjie
+![image](https://user-images.githubusercontent.com/65893273/121814468-d928d700-cca3-11eb-981e-068a1b59027a.png)    
+speed up the code!!!  
+
+
 
 # *Update:2021/June/01 Junjie Chu*  
 To complie:  
