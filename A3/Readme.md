@@ -10,7 +10,7 @@ According to Jarmo's feedback:
 3.Use MPI_Isend to send the data and MPI_Recv to receive. After exchange you should use the merge function.***（Finished by Junjie 2021/May/31）***   
 4.Why do you qsort on lines 301 and 323, is this needed, how does your data look after the merge? It seems that you miss the point with this algorithm when you start sorting in each step.***（comment out the 2 qsort! really no need to do that because merge has made the data sorted! Finished by Junjie 2021/June/13）***       
 5.When you collect the data why do you need an extra buffer, why not receiving directly into the final array?***（Modify the code and store the sorted data from different processors directly in the finaldata! Finished by Junjie 2021/June/13）***    
-6.Just find the split point by searching either from the middle with linear search or by using binary search.  
+6.Just find the split point by searching either from the middle with linear search or by using binary search.***（Now I finish using the linear search starts from the middle point!!! Finished by Junjie 2021/June/13 IF YOU LIKE, YOU COULD TRY BINARY SEARCH）***    
 
 # *Update:2021/June/13 Junjie Chu*  
 To complie:  
@@ -18,9 +18,11 @@ To complie:
 mpicc -std=c99 -g -O3 -o quicksort_revised_0 quicksort_revised_0.c -lm
 ```
 ## Results:
-### 2021/6/01 Junjie
+### 2021/6/13 Junjie
 ![image](https://user-images.githubusercontent.com/65893273/121814468-d928d700-cca3-11eb-981e-068a1b59027a.png)    
 speed up the code!!! Main reason is that we delete the 2 useless qsort!!!     
+![image](https://user-images.githubusercontent.com/65893273/121863827-d4f5cb80-cd2e-11eb-9b50-44490c3080f8.png)  
+The linear search starts from the mid point has small effect, but also improve a bit.  
 
 
 
